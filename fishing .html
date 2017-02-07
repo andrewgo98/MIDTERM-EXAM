@@ -13,19 +13,21 @@ action="javascript:void(0)">
 </tr><tr>
 <td width="48%">1 Fishing Rod &amp; Reel</td>
 <td width="10%">
-<input type="text" name="txtRod" size="5"
+<input type="text" name="prRod" size="5" id="prRod"
 value="7.99"></td>
-<td width="43%"><select size="1" name="qRod">
+<td width="43%"><select size="1" name="qRod" id="qRod">
+  <option selected value="1">
+Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
 </select></td></tr><tr>
 <td width="48%">1 Tackle Box</td>
 <td width="10%">
-<input type="text" name="txtBox" size="5"
+<input type="text" name="prBox" size="5" id="prBox"
 value="2.55"></td>
-<td width="43%"><select size="1" name="qBox">
-<option selected value="0">
+<td width="43%"><select size="1" name="qBox" id="qBox">
+<option selected value="1">
 Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -34,10 +36,10 @@ Select Quantity</option>
   <tr>
 <td width="48%">1 Taga Box</td>
 <td width="10%">
-<input type="text" name="txtBox" size="5"
+<input type="text" name="prTaga" size="5" id="prTaga"
 value="1.75"></td>
-<td width="43%"><select size="1" name="qBox">
-<option selected value="0">
+<td width="43%"><select size="1" name="qTaga" id="qTaga">
+<option selected value="1">
 Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -56,18 +58,35 @@ name="btnSubmit" onClick="calcTotal()">
 <input type="text" name="txtTotal" size="10"
 value="0.00"></p>
 </form>
-
 <script language="javascript">
 function calcTotal(){
-var strRod, strBox, prRod, prBox,strTotal;
-strRod=parseInt(strRod)* prRod;
-strBox=parseInt(strBox)* prBox;
-strTotal=(strRod + strBox);
-document.for.txtTotal.value=strTotal;
+var finRod,finBox,finTaga,TOTAL;
+  finRod=$("#prRod")*$("#qRod");
+  finBox=$("#prBox")*$("#qBox");
+  finTaga=$("#prTaga")*$("#qTaga");
+  document.form.txtTotal.value=TOTAL;
+
 }
 </script>
 
-<h3>Click Button to change Color Background!</h3>
+<h3><center>Click Button to change Color Background!</center>
+    </h3>
+    <form name="frmColor" action="javascript:void(0);"><center>
+      <input type="submit" value="White" name="bW"
+             onClick="selectColor('White')">
+      <input type="submit" value="Yellow" name="bY"
+             onClick="selectColor('Yellow')">
+      <input type="submit" value="Fuchsia" name="bF"
+             onClick="selectColor('Fuchsia')">
+      <input type="submit" value="Green" name="bG"
+             onClick="selectColor('Green')">
+      <input type="submit" value="Purple" name="bG"
+             onClick="selectColor('Purple')">
+      <input type="submit" value="Silver" name="bP"
+             onClick="selectColor('Silver')">
+      <input type="submit" value="Red" name="bS"
+             onClick="selectColor('Red')">
+      </center>
 
 
 
