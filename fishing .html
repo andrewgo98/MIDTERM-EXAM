@@ -5,7 +5,7 @@
 <p align="center">We rent all of our fishing equipment by the week.</p>
 <form method="post" name="form"
 action="javascript:void(0)">
-<table border-"0" width="39%" align="center">
+<table border="0" width="39%" align="center">
 <tr>
 <td width="48%"><b>Product Name</b></td>
 <td width="10%"><b>Price</b></td>
@@ -15,7 +15,7 @@ action="javascript:void(0)">
 <td width="10%">
 <input type="text" name="txtRod" size="5"
 value="7.99"></td>
-<td width="43%"><select size="1" name"qRod">
+<td width="43%"><select size="1" name="qRod">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
@@ -30,8 +30,22 @@ Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
-</select></td></tr><table>
-
+</select></td></tr>
+  <tr>
+<td width="48%">1 Taga Box</td>
+<td width="10%">
+<input type="text" name="txtBox" size="5"
+value="1.75"></td>
+<td width="43%"><select size="1" name="qBox">
+<option selected value="0">
+Select Quantity</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+</select></td></tr>
+  
+  <table>
+<form>
 <p align="center">
 <input type="submit" value="Calculate your Order"
 name="btnSubmit" onClick="calcTotal()">
@@ -59,4 +73,4 @@ document.for.txtTotal.value=strTotal;
 
 </body></html>
 
-</html>
+
