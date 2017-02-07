@@ -55,7 +55,7 @@ name="btnSubmit" onClick="calcTotal()">
 <p align="center">Thank you for your purchase</p>
 <p align="center">Your total is:</p>
 <p align="center">
-<input type="text" name="txtTotal" size="10"
+<input type="text" name="txtTotal" size="10" id="TOTAL"
 value="0.00"></p>
 </form>
 <script language="javascript">
@@ -64,7 +64,8 @@ var finRod,finBox,finTaga,TOTAL;
   finRod=$("#prRod")*$("#qRod");
   finBox=$("#prBox")*$("#qBox");
   finTaga=$("#prTaga")*$("#qTaga");
-  document.form.txtTotal.value=TOTAL;
+  TOTAL=(finTaga+finBox+finRod);
+  fishing.form.txtTotal.value=TOTAL;
 
 }
 </script>
@@ -86,7 +87,11 @@ var finRod,finBox,finTaga,TOTAL;
              onClick="selectColor('Silver')">
       <input type="submit" value="Red" name="bS"
              onClick="selectColor('Red')">
-      </center>
+      </center></form>
+    <script language="Javascript">
+      function selectColor(selectColor){
+      fishing.bgColor=selectColor;
+      }</script>
 
 
 
