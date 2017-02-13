@@ -1,100 +1,89 @@
-<html><head><title>Fishing</title>
-</head>
-<body bgcolor="FFFF99" text="#800000">
-<h1 align="center">FISHING STORE ORDER FORM</h1>
-<p align="center">We rent all of our fishing equipment by the week.</p>
+<html><head><title>Fishing</title></head>
+<body bgcolor="#FFF99" text="800000">
+<h1 align="center">Fishing Store Order Form</h1>
+<p align="center">We rent all of our equipment by the week.></p>
+
 <form method="post" name="form"
-action="javascript:void(0)">
-<table border="0" width="39%" align="center">
+  action="javascript:void(0)">
+  
+<table border="0" width ="39%" align="center">
 <tr>
 <td width="48%"><b>Product Name</b></td>
 <td width="10%"><b>Price</b></td>
 <td width="43%"><b>Quantity</b></td>
-</tr><tr>
+</tr>
+<tr>
 <td width="48%">1 Fishing Rod &amp; Reel</td>
 <td width="10%">
-<input type="text" name="prRod" size="5" id="prRod"
-value="7.99"></td>
-<td width="43%"><select size="1" name="qRod" id="qRod">
-  <option selected value="1">
-Select Quantity</option>
+<input type="text" name="txtRod" size="5" value="7.99"></td>
+<td width="43%"><select size="1" name="qRod">
+<option selected value="0">
+  Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
-</select></td></tr><tr>
+</select></td></tr>
+	
+<tr>
 <td width="48%">1 Tackle Box</td>
 <td width="10%">
-<input type="text" name="prBox" size="5" id="prBox"
-value="2.55"></td>
-<td width="43%"><select size="1" name="qBox" id="qBox">
-<option selected value="1">
+<input type="text" name="txtTaga" size="5" value="2.55"></td>
+<td width="43%"><select size="1" name="qTaga">
+<option selected value="0">
 Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
 </select></td></tr>
-  <tr>
+	
+<tr>
 <td width="48%">1 Taga Box</td>
 <td width="10%">
-<input type="text" name="prTaga" size="5" id="prTaga"
-value="1.75"></td>
-<td width="43%"><select size="1" name="qTaga" id="qTaga">
-<option selected value="1">
+<input type="text" name="txtTBox" size="5" value="1.75"></td>
+<td width="43%"><select size="1" name="qTBox">
+<option selected value="0">
 Select Quantity</option>
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
-</select></td></tr>
-  
-  <table>
-<form>
+</select></td></tr></table>
+
 <p align="center">
-<input type="submit" value="Calculate your Order"
-name="btnSubmit" onClick="calcTotal()">
+<input type="submit" value="Calculate your order" name="btnSubmit" onClick="calcTotal()">
 <input type="reset" value="Clear" name="btnClear">
-<p align="center">Thank you for your purchase</p>
-<p align="center">Your total is:</p>
-<p align="center">
-<input type="text" name="txtTotal" size="10" id="TOTAL"
-value="0.00"></p>
+<p align="center">Your total is <input type="text" name="txtTotal" size="10" value="0.00"></p>
 </form>
+	
 <script language="javascript">
 function calcTotal(){
-var finRod,finBox,finTaga,TOTAL;
-  finRod=$("#prRod")*$("#qRod");
-  finBox=$("#prBox")*$("#qBox");
-  finTaga=$("#prTaga")*$("#qTaga");
-  TOTAL=(finTaga+finBox+finRod);
-  fishing.form.txtTotal.value=TOTAL;
-
+	var strRod, strBox, prRod, prBox, strTotal;
+	strRod=document.form.qRod.value;
+	strBox=document.form.qBox.value;
+	prRod=document.form.txtRod.value;
+	prBox=document.form.txtBox.value;
+	strRod=parseInt(strRod)* prRod;
+	strBox=parseInt(strBox)* prBox;
+	strTotal=(strRod + strBox);
+	document.form.txtTotal.value=strTotal;
 }
-</script>
+</script></body></html>
 
-<h3><center>Click Button to change Color Background!</center>
-    </h3>
-    <form name="frmColor" action="javascript:void(0);"><center>
-      <input type="submit" value="White" name="bW"
-             onClick="selectColor('White')">
-      <input type="submit" value="Yellow" name="bY"
-             onClick="selectColor('Yellow')">
-      <input type="submit" value="Fuchsia" name="bF"
-             onClick="selectColor('Fuchsia')">
-      <input type="submit" value="Green" name="bG"
-             onClick="selectColor('Green')">
-      <input type="submit" value="Purple" name="bG"
-             onClick="selectColor('Purple')">
-      <input type="submit" value="Silver" name="bP"
-             onClick="selectColor('Silver')">
-      <input type="submit" value="Red" name="bS"
-             onClick="selectColor('Red')">
-      </center></form>
-    <script language="Javascript">
-      function selectColor(selectColor){
-      fishing.bgColor=selectColor;
-      }</script>
-
-
-
+<html><head><title>Choose a Color</title>
+<script language="javascript">function selectColor(selectColor){
+		document.bgColor=selectColor;
+}</script></head>	
+<body><center>
+<h3>Choose a color for your background:</h3>
+<form name="frmColor" action="javascript:void(0);"> 
+<input type="submit" value="White" name="bW" onClick="selectColor('White')">
+<input type="submit" value="Yellow" name="bY" onClick="selectColor('Yellow')">						   
+<input type="submit" value="Fuchsia" name="bF" onClick="selectColor('Fuchsia')">
+<input type="submit" value="Green" name="bG" onClick="selectColor('Green')">	
+<input type="submit" value="Purple" name="bP" onClick="selectColor('Purple')">	
+<input type="submit" value="Silver" name="bS" onClick="selectColor('Silver')">	
+<input type="submit" value="Teal" name="bT" onClick="selectColor('Teal')">
+<input type="submit" value="Olive" name="bO" onClick="selectColor('Olive')">
+</form>
+	
+  </center></form>
 </body></html>
-
-
